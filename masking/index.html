@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Masking</title>
+    <link rel="stylesheet" href="masking.css" type="text/css">
+</head>
+<body>
+<h1 id="masking">Masking</h1>
+<ul>
+    <li>
+        <h2>Solution 1: Border-radius 50%</h2>
+        <div class="image-container border-radius">
+            <img src="../img/img1.jpg">
+            <span class="notes">
+                Suporta box-shadow. Para fazer uma máscara circular,
+                é preciso que a imagem seja quadrada
+            </span>
+        </div>
+    </li>
+
+    <li>
+        <h2>Solution 2: SVG mask</h2>
+        <div class="image-container svg">
+            <img src="../img/img1.jpg">
+            <span class="notes">
+                Elegante e flexível. porém o suporte não é amplo e necessita de código SVG extra.
+            </span>
+        </div>
+    </li>
+
+    <li>
+        <h2>Solution 3: Radial gradient mask</h2>
+        <div class="image-container gradient-mask">
+            <img src="../img/img1.jpg">
+            <span class="notes">
+                Bem flexível (css puro) e fácil de manipular, porém fica com serrilhado e não aceita box-shadow.
+            </span>
+        </div>
+    </li>
+</ul>
+
+<svg width="120" height="120" viewBox="0 0 120 120" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+    <mask id="circle_mask" maskContentUnits="objectBoundingBox">
+        <circle cx="60" cy="60"r="10">
+    </mask>
+</svg>
+
+</body>
+</html>
